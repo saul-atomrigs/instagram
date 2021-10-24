@@ -7,8 +7,8 @@ import firebase from 'firebase'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import Landing from './components/auth/Landing'
-import Register from './components/auth/Register'
+import LandingScreen from './components/auth/Landing'
+import RegisterScreen from './components/auth/Register'
 import MainScreen from './components/Main'
 
 import { Provider } from 'react-redux'
@@ -81,7 +81,13 @@ export class App extends Component {
     // after loading complete: 
     return (
       <Provider store={store}>
-        <MainScreen />
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName='Landing'>
+            <Stack.Screen name='Main' component={MainScreen} options={{ headerShown: false }} />
+            <Stack.Screen name='Add' component={AddScreen} navigation={this.props.navigation} />
+            <Stack.Screen name='Save' component={SaveScreen} navigation={this.props.navigation} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </Provider>
     )
   }
