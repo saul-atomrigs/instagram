@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native'
 
 import { connect } from 'react-redux'
 
-function Profile() {
+function Profile(props) {
+    const [userPost, setUserPosts] = userState([])
+    const [user, setUser] = useState(null)
+
+    useEffect(() => {
+
+    })
+
     const { currentUser, posts } = props
     console.log({ currentUser, posts })
     return (
@@ -38,7 +45,7 @@ const styles = StyleSheet.create({
         margin: 20,
     },
     containerGallery: {
-        flex: 1,
+        flex: 1 / 3,
     },
     image: {
         flex: 1,
