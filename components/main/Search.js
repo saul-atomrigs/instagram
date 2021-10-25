@@ -24,7 +24,7 @@ export default function Search() {
                 numColumns={1}
                 horizontal={false}
                 data={users}
-                renderItem={({ itme }) => (
+                renderItem={({ item }) => (
                     <TouchableOpacity>
                         onPress={() => props.navigation.navigate("Profile", { uid: item.id })}
 
@@ -35,3 +35,10 @@ export default function Search() {
         </View>
     )
 }
+import Component2 from "https://framer.com/m/component2-9muk.js@PsYR6uwRD0wNvwHPgwll"
+
+import Home from "https://framer.com/m/Home-EKk0.js@zTO7UDopELNnMha6Vzs7"
+<Home
+    // Using default values:
+    image={image}
+/>
